@@ -1,0 +1,77 @@
+# Main Enigma 4 (€1000 and 1 bottle):
+#
+# Construct a 4×4 magic square using distinct positive cubed integers, or prove
+# that it is impossible.
+
+int a, b, c, d,
+    e, f, g, h,
+    i, j, k, l,
+    m, n, o, p;
+
+a3 = a * a * a;
+b3 = b * b * b;
+c3 = c * c * c;
+d3 = d * d * d;
+e3 = e * e * e;
+f3 = f * f * f;
+g3 = g * g * g;
+h3 = h * h * h;
+i3 = i * i * i;
+j3 = j * j * j;
+k3 = k * k * k;
+l3 = l * l * l;
+m3 = m * m * m;
+n3 = n * n * n;
+o3 = o * o * o;
+p3 = p * p * p;
+
+row1 = a3 + b3 + c3 + d3;
+row2 = e3 + f3 + g3 + h3;
+row3 = i3 + j3 + k3 + l3;
+row4 = m3 + n3 + o3 + p3;
+
+col1 = a3 + e3 + i3 + m3;
+col2 = b3 + f3 + j3 + n3;
+col3 = c3 + g3 + k3 + o3;
+col4 = d3 + h3 + l3 + p3;
+
+dia1 = a3 + f3 + k3 + p3;
+dia2 = d3 + g3 + j3 + m3;
+
+invariant row1 == row2;
+invariant row1 == row3;
+invariant row1 == row4;
+
+invariant row1 == col1;
+invariant row1 == col2;
+invariant row1 == col3;
+invariant row1 == col4;
+
+invariant row1 == dia1;
+invariant row1 == dia2;
+
+invariant a != b, a != c, a != d, a != e, a != f, a != g, a != h, a != i, a != j, a != k, a != l, a != m, a != n, a != o, a != p;
+invariant b != c, b != d, b != e, b != f, b != g, b != h, b != i, b != j, b != k, b != l, b != m, b != n, b != o, b != p;
+invariant c != d, c != e, c != f, c != g, c != h, c != i, c != j, c != k, c != l, c != m, c != n, c != o, c != p;
+invariant d != e, d != f, d != g, d != h, d != i, d != j, d != k, d != l, d != m, d != n, d != o, d != p;
+invariant e != f, e != g, e != h, e != i, e != j, e != k, e != l, e != m, e != n, e != o, e != p;
+invariant f != g, f != h, f != i, f != j, f != k, f != l, f != m, f != n, f != o, f != p;
+invariant g != h, g != i, g != j, g != k, g != l, g != m, g != n, g != o, g != p;
+invariant h != i, h != j, h != k, h != l, h != m, h != n, h != o, h != p;
+invariant i != j, i != k, i != l, i != m, i != n, i != o, i != p;
+invariant j != k, j != l, j != m, j != n, j != o, j != p;
+invariant k != l, k != m, k != n, k != o, k != p;
+invariant l != m, l != n, l != o, l != p;
+invariant m != n, m != o, m != p;
+invariant n != o, n != p;
+invariant o != p;
+
+invariant a > 0, b > 0, c > 0, d > 0,
+          e > 0, f > 0, g > 0, h > 0,
+          i > 0, j > 0, k > 0, l > 0,
+          m > 0, n > 0, o > 0, p > 0;
+
+vary a, b, c, d,
+     e, f, g, h,
+     i, j, k, l,
+     m, n, o, p;

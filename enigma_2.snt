@@ -1,0 +1,131 @@
+# Main Enigma 2 (€1000 and 1 bottle):
+#
+# Construct a 5×5 bimagic square using distinct positive integers, or prove that
+# it is impossible.
+
+int a, b, c, d, e,
+    f, g, h, i, j,
+    k, l, m, n, o,
+    p, q, r, s, t,
+    u, v, w, x, y;
+
+row1 = a + b + c + d + e;
+row2 = f + g + h + i + j;
+row3 = k + l + m + n + o;
+row4 = p + q + r + s + t;
+row5 = u + v + w + x + y;
+
+col1 = a + f + k + p + u;
+col2 = b + g + l + q + v;
+col3 = c + h + m + r + w;
+col4 = d + i + n + s + x;
+col5 = e + j + o + t + y;
+
+dia1 = a + g + m + s + y;
+dia2 = e + i + m + q + u;
+
+invariant row1 == row2;
+invariant row1 == row3;
+invariant row1 == row4;
+invariant row1 == row5;
+
+invariant row1 == col1;
+invariant row1 == col2;
+invariant row1 == col3;
+invariant row1 == col4;
+invariant row1 == col5;
+
+invariant row1 == dia1;
+invariant row1 == dia2;
+
+a2 = a * a;
+b2 = b * b;
+c2 = c * c;
+d2 = d * d;
+e2 = e * e;
+f2 = f * f;
+g2 = g * g;
+h2 = h * h;
+i2 = i * i;
+j2 = j * j;
+k2 = k * k;
+l2 = l * l;
+m2 = m * m;
+n2 = n * n;
+o2 = o * o;
+p2 = p * p;
+q2 = q * q;
+r2 = r * r;
+s2 = s * s;
+t2 = t * t;
+u2 = u * u;
+v2 = v * v;
+w2 = w * w;
+x2 = x * x;
+y2 = y * y;
+
+squared_row1 = a2 + b2 + c2 + d2 + e2;
+squared_row2 = f2 + g2 + h2 + i2 + j2;
+squared_row3 = k2 + l2 + m2 + n2 + o2;
+squared_row4 = p2 + q2 + r2 + s2 + t2;
+squared_row5 = u2 + v2 + w2 + x2 + y2;
+
+squared_col1 = a2 + f2 + k2 + p2 + u2;
+squared_col2 = b2 + g2 + l2 + q2 + v2;
+squared_col3 = c2 + h2 + m2 + r2 + w2;
+squared_col4 = d2 + i2 + n2 + s2 + x2;
+squared_col5 = e2 + j2 + o2 + t2 + y2;
+
+squared_dia1 = a2 + g2 + m2 + s2 + y2;
+squared_dia2 = e2 + i2 + m2 + q2 + u2;
+
+invariant squared_row1 == squared_row2;
+invariant squared_row1 == squared_row3;
+invariant squared_row1 == squared_row4;
+invariant squared_row1 == squared_row5;
+
+invariant squared_row1 == squared_col1;
+invariant squared_row1 == squared_col2;
+invariant squared_row1 == squared_col3;
+invariant squared_row1 == squared_col4;
+invariant squared_row1 == squared_col5;
+
+invariant squared_row1 == squared_dia1;
+invariant squared_row1 == squared_dia2;
+
+invariant a != b, a != c, a != d, a != e, a != f, a != g, a != h, a != i, a != j, a != k, a != l, a != m, a != n, a != o, a != p, a != q, a != r, a != s, a != t, a != u, a != v, a != w, a != x, a != y;
+invariant b != c, b != d, b != e, b != f, b != g, b != h, b != i, b != j, b != k, b != l, b != m, b != n, b != o, b != p, b != q, b != r, b != s, b != t, b != u, b != v, b != w, b != x, b != y;
+invariant c != d, c != e, c != f, c != g, c != h, c != i, c != j, c != k, c != l, c != m, c != n, c != o, c != p, c != q, c != r, c != s, c != t, c != u, c != v, c != w, c != x, c != y;
+invariant d != e, d != f, d != g, d != h, d != i, d != j, d != k, d != l, d != m, d != n, d != o, d != p, d != q, d != r, d != s, d != t, d != u, d != v, d != w, d != x, d != y;
+invariant e != f, e != g, e != h, e != i, e != j, e != k, e != l, e != m, e != n, e != o, e != p, e != q, e != r, e != s, e != t, e != u, e != v, e != w, e != x, e != y;
+invariant f != g, f != h, f != i, f != j, f != k, f != l, f != m, f != n, f != o, f != p, f != q, f != r, f != s, f != t, f != u, f != v, f != w, f != x, f != y;
+invariant g != h, g != i, g != j, g != k, g != l, g != m, g != n, g != o, g != p, g != q, g != r, g != s, g != t, g != u, g != v, g != w, g != x, g != y;
+invariant h != i, h != j, h != k, h != l, h != m, h != n, h != o, h != p, h != q, h != r, h != s, h != t, h != u, h != v, h != w, h != x, h != y;
+invariant i != j, i != k, i != l, i != m, i != n, i != o, i != p, i != q, i != r, i != s, i != t, i != u, i != v, i != w, i != x, i != y;
+invariant j != k, j != l, j != m, j != n, j != o, j != p, j != q, j != r, j != s, j != t, j != u, j != v, j != w, j != x, j != y;
+invariant k != l, k != m, k != n, k != o, k != p, k != q, k != r, k != s, k != t, k != u, k != v, k != w, k != x, k != y;
+invariant l != m, l != n, l != o, l != p, l != q, l != r, l != s, l != t, l != u, l != v, l != w, l != x, l != y;
+invariant m != n, m != o, m != p, m != q, m != r, m != s, m != t, m != u, m != v, m != w, m != x, m != y;
+invariant n != o, n != p, n != q, n != r, n != s, n != t, n != u, n != v, n != w, n != x, n != y;
+invariant o != p, o != q, o != r, o != s, o != t, o != u, o != v, o != w, o != x, o != y;
+invariant p != q, p != r, p != s, p != t, p != u, p != v, p != w, p != x, p != y;
+invariant q != r, q != s, q != t, q != u, q != v, q != w, q != x, q != y;
+invariant r != s, r != t, r != u, r != v, r != w, r != x, r != y;
+invariant s != t, s != u, s != v, s != w, s != x, s != y;
+invariant t != u, t != v, t != w, t != x, t != y;
+invariant u != v, u != w, u != x, u != y;
+invariant v != w, v != x, v != y;
+invariant w != x, w != y;
+invariant x != y;
+
+invariant a > 0, b > 0, c > 0, d > 0, e > 0,
+          f > 0, g > 0, h > 0, i > 0, j > 0,
+          k > 0, l > 0, m > 0, n > 0, o > 0,
+          p > 0, q > 0, r > 0, s > 0, t > 0,
+          u > 0, v > 0, w > 0, x > 0, y > 0;
+
+vary a, b, c, d, e,
+     f, g, h, i, j,
+     k, l, m, n, o,
+     p, q, r, s, t,
+     u, v, w, x, y;

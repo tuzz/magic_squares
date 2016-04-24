@@ -1,0 +1,69 @@
+# Main Enigma 1 (€1000 and 1 bottle):
+#
+# Construct a 3×3 magic square using seven (or eight, or nine) distinct squared
+# integers different from the only known example and its rotations, symmetries
+# and k2 multiples. Or prove that it is impossible.
+
+int a, b, c, d, e, f, g, h, i;
+
+int16 a_other, b_other, c_other, d_other, e_other, f_other, g_other, h_other,
+  i_other;
+
+bool a_squared, b_squared, c_squared, d_squared, e_squared, f_squared,
+  g_squared, h_squared, i_squared;
+
+a2 = a_squared.if(a * a, a_other);
+b2 = b_squared.if(b * b, b_other);
+c2 = c_squared.if(c * c, c_other);
+d2 = d_squared.if(d * d, d_other);
+e2 = e_squared.if(e * e, e_other);
+f2 = f_squared.if(f * f, f_other);
+g2 = g_squared.if(g * g, g_other);
+h2 = h_squared.if(h * h, h_other);
+i2 = i_squared.if(i * i, i_other);
+
+squares = 0;
+
+squares += a_squared.if(1, 0);
+squares += b_squared.if(1, 0);
+squares += c_squared.if(1, 0);
+squares += d_squared.if(1, 0);
+squares += e_squared.if(1, 0);
+squares += f_squared.if(1, 0);
+squares += g_squared.if(1, 0);
+squares += h_squared.if(1, 0);
+squares += i_squared.if(1, 0);
+
+invariant squares == 7 || squares == 8 || squares == 9;
+
+row1 = a2 + b2 + c2;
+row2 = d2 + e2 + f2;
+row3 = g2 + h2 + i2;
+
+col1 = a2 + d2 + g2;
+col2 = b2 + e2 + h2;
+col3 = c2 + f2 + i2;
+
+dia1 = a2 + e2 + i2;
+dia2 = c2 + e2 + g2;
+
+invariant row1 == row2;
+invariant row1 == row3;
+
+invariant row1 == col1;
+invariant row1 == col2;
+invariant row1 == col3;
+
+invariant row1 == dia1;
+invariant row1 == dia2;
+
+invariant a2 != b2, a2 != c2, a2 != d2, a2 != e2, a2 != f2, a2 != g2, a2 != h2, a2 != i2;
+invariant b2 != c2, b2 != d2, b2 != e2, b2 != f2, b2 != g2, b2 != h2, b2 != i2;
+invariant c2 != d2, c2 != e2, c2 != f2, c2 != g2, c2 != h2, c2 != i2;
+invariant d2 != e2, d2 != f2, d2 != g2, d2 != h2, d2 != i2;
+invariant e2 != f2, e2 != g2, e2 != h2, e2 != i2;
+invariant f2 != g2, f2 != h2, f2 != i2;
+invariant g2 != h2, g2 != i2;
+invariant h2 != i2;
+
+vary a, b, c, d, e, f, g, h, i;

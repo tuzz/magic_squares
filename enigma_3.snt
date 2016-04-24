@@ -1,0 +1,44 @@
+# Main Enigma 3 (€1000 and 1 bottle):
+#
+# Construct a 3×3 semi-magic square using positive distinct cubed integers, or
+# prove that it is impossible.
+
+int a, b, c, d, e, f, g, h, i;
+
+a3 = a * a * a;
+b3 = b * b * b;
+c3 = c * c * c;
+d3 = d * d * d;
+e3 = e * e * e;
+f3 = f * f * f;
+g3 = g * g * g;
+h3 = h * h * h;
+i3 = i * i * i;
+
+row1 = a3 + b3 + c3;
+row2 = d3 + e3 + f3;
+row3 = g3 + h3 + i3;
+
+col1 = a3 + d3 + g3;
+col2 = b3 + e3 + h3;
+col3 = c3 + f3 + i3;
+
+invariant row1 == row2;
+invariant row1 == row3;
+
+invariant row1 == col1;
+invariant row1 == col2;
+invariant row1 == col3;
+
+invariant a3 != b3, a3 != c3, a3 != d3, a3 != e3, a3 != f3, a3 != g3, a3 != h3, a3 != i3;
+invariant b3 != c3, b3 != d3, b3 != e3, b3 != f3, b3 != g3, b3 != h3, b3 != i3;
+invariant c3 != d3, c3 != e3, c3 != f3, c3 != g3, c3 != h3, c3 != i3;
+invariant d3 != e3, d3 != f3, d3 != g3, d3 != h3, d3 != i3;
+invariant e3 != f3, e3 != g3, e3 != h3, e3 != i3;
+invariant f3 != g3, f3 != h3, f3 != i3;
+invariant g3 != h3, g3 != i3;
+invariant h3 != i3;
+
+invariant a3 > 0, b3 > 0, c3 > 0, d3 > 0, e3 > 0, f3 > 0, g3 > 0, h3 > 0, i3 > 0;
+
+vary a, b, c, d, e, f, g, h, i;
