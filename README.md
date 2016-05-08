@@ -19,3 +19,15 @@ Run a program:
 ```
 sentient enigma_1.snt
 ```
+
+## Results
+
+The following table summarises the results of this project thus far. These were
+collected by running the Sentient programs found in this directory using the
+[treengeling](http://fmv.jku.at/lingeling/) SAT solver, which is an effective,
+parallel solver. The verbose output of each solve can be found in the `out/`
+directory.
+
+Date       | Enigma | Status   | Bits tested | Range tested      | Time taken |
+-----------|--------|----------|-------------|-------------------|------------|
+08-05-2016 | 1      | Unsolved | 10, 20      | 1..511, 1..524287 | 301 hours  |

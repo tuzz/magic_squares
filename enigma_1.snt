@@ -4,9 +4,9 @@
 # integers different from the only known example and its rotations, symmetries
 # and k2 multiples. Or prove that it is impossible.
 
-int a, b, c, d, e, f, g, h, i;
+int10 a, b, c, d, e, f, g, h, i;
 
-int16 a_other, b_other, c_other, d_other, e_other, f_other, g_other, h_other,
+int20 a_other, b_other, c_other, d_other, e_other, f_other, g_other, h_other,
   i_other;
 
 bool a_squared, b_squared, c_squared, d_squared, e_squared, f_squared,
