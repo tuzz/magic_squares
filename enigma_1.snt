@@ -4,9 +4,9 @@
 # integers different from the only known example and its rotations, symmetries
 # and k2 multiples. Or prove that it is impossible.
 
-int10 a, b, c, d, e, f, g, h, i;
+int11 a, b, c, d, e, f, g, h, i;
 
-int20 a_other, b_other, c_other, d_other, e_other, f_other, g_other, h_other,
+int22 a_other, b_other, c_other, d_other, e_other, f_other, g_other, h_other,
   i_other;
 
 bool a_squared, b_squared, c_squared, d_squared, e_squared, f_squared,
@@ -65,5 +65,8 @@ invariant e2 != f2, e2 != g2, e2 != h2, e2 != i2;
 invariant f2 != g2, f2 != h2, f2 != i2;
 invariant g2 != h2, g2 != i2;
 invariant h2 != i2;
+
+# Disallow the example found by Andrew Bremner.
+invariant row1 != 541875;
 
 vary a, b, c, d, e, f, g, h, i;
